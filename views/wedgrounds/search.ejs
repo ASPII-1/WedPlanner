@@ -1,0 +1,58 @@
+<% layout('layout/boilerplate')-%>
+
+    <h1 class="text-center">All Wedding Places</h1>
+    <form action="/results" class="mb-5 mb-3 mt-4">
+        <div class="d-flex mb-3">
+          <input class="form-control me-2" type="search" placeholder="Search Your Wedgrounds ...." name="search_query" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit">Search</button>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input "  type="checkbox" id="toggle" name="toggle" value="1">
+          <label id="toggleLabel" class="form-check-label " for="toggle">Title</label>
+        </div>
+      </form>      
+      
+    <% if (wedgrounds.length===0) { %>
+        <div class="d-flex justify-content-center">
+            <img class="img-fluid" style="opacity: 0.7;height:400px; width: 800px; margin-bottom: 2em;" src="/img/noresult.png" alt="No results found">
+        </div>    
+    <% }  else {%>    
+        <% for(let wedground of wedgrounds) {%>
+            <div class="card mb-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-fluid " src="<%= wedground.images[0].url%>" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%=wedground.title%>
+                            </h5>
+                            <p class="card-text">
+                                <%=wedground.description%>
+                            </p>
+                            <p class="list-group-item">
+                                <small class=" text-muted">
+                                    <%=wedground.location%>
+                                </small>
+                            </p>
+                            <a href="/wedgrounds/<%= wedground.id%>" class="btn btn-dark">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    <%}%>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+              const toggleCheckbox = document.getElementById('toggle');
+              const toggleLabel = document.getElementById('toggleLabel');
+              toggleCheckbox.addEventListener('click', function() {
+                    if (toggleCheckbox.checked) {
+                    toggleLabel.textContent = 'Region';
+                    } else {
+                    toggleLabel.textContent = 'Title';
+                    }
+              });
+          });
+        </script>

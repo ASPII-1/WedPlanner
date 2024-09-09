@@ -1,0 +1,73 @@
+<% layout('layout/boilerplate')-%>
+
+    <div class="row">
+        <h1 class="text-center">New Destination</h1>
+        <div class="col-md-6 mt-3">
+            <form action="/wedgrounds" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="wedground[title]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please choose a username.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="wedground[location]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please choose a location.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Price</label>
+                    <div class="input-group">
+                        <input class="form-control" type="text" id="price" placeholder="0.00" name="wedground[price]"
+                            required>
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please choose a price.
+                    </div>
+
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Image</label>
+                    <input class="form-control form-control-sm" type="file" id="image" name="image" multiple required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please choose an image.
+                    </div>
+
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="desc">description</label>
+                    <textarea class="form-control" rows="5" type="text" id="desc" name="wedground[description]"
+                        required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please write description.
+                    </div>
+
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-dark">Add Destination</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 mt-5">
+            <img src="/img/new-page.jpg" class=" rounded float-end" alt="..." style="width: 100%">
+        </div>

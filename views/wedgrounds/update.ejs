@@ -1,0 +1,80 @@
+<% layout('layout/boilerplate')-%>
+    <div class="row">
+        <h1 class="text-center">Edit Destination</h1>
+        <div class=" col-md-6 offset-md-3 mt-3">
+            <form action="/wedgrounds/<%=wedground._id%>?_method=PUT" method="POST" novalidate class="needs-validation"
+                enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="wedground[title]"
+                        value="<%=wedground.title%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please choose a username.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="wedground[location]"
+                        value="<%=wedground.location%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please choose a location.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Price</label>
+                    <div class="input-group">
+                        <input class="form-control" type="number" id="price" placeholder="0.00" name="wedground[price]"
+                            value="<%=wedground.price%>">
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please choose a price.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="desc">description</label>
+                    <textarea class="form-control" rows="5" type="text" id="desc"
+                        name="wedground[description]"><%=wedground.description%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please write description.
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <div class="mb-3">
+                        <label class="form-label" for="image">Image</label>
+                        <input class="form-control  form-control-sm" type="file" id="image" name="image" multiple>
+                    </div>
+                    <div class="mb-4">
+                        <% wedground.images.forEach(function(img, i) { %>
+
+                            <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="">
+                            <div class="form-check-inline">
+                                <input type="checkbox" id="image-<%=i%>" name="deleteImages[]"
+                                    value="<%=img.filename%>">
+                            </div>
+                            <label for="image-<%=i%>">Delete?</label>
+                            <% })%>
+                    </div>
+
+                </div>
+                <div class="col-md-6 offset-md-3 mb-3 ">
+                    <button type="submit" class="btn btn-dark">Add Destination</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    </div>

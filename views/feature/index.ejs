@@ -1,0 +1,57 @@
+<% layout('layout/boilerplate')-%>
+
+<style>
+    .wedground-btn {
+        height: 200px; /* Adjust height as needed */
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        font-size: 1.5rem; /* Adjust font size as needed */
+        border-radius: 10px; /* Optional: Adds rounded corners */
+    }
+
+    .wedground-btn:hover {
+        opacity: 0.8; /* Optional: Lower opacity on hover */
+        text-decoration: none; /* Optional: Remove underline on hover */
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <a href="/wedgrounds/feature/rated" class="btn btn-primary btn-block wedground-btn" style="background-image: url('/img/rating.webp');">
+                Top Rated
+            </a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a href="/wedgrounds/feature/expensive" class="btn btn-primary btn-block wedground-btn" style="background-image: url('/img/expensive.jpg');">
+                Most Expensive
+            </a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a href="/wedgrounds/feature/economical" class="btn btn-primary btn-block wedground-btn" style="background-image: url('/img/economic.jpg');">
+                Most Economical
+            </a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a href="/wedgrounds/feature/viewed" class="btn btn-primary btn-block wedground-btn" style="background-image: url('/img/view.webp');">
+                Most Viewed
+            </a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a href="/wedgrounds/feature/newest" class="btn btn-primary btn-block wedground-btn" style="background-image: url('/img/new.jpeg');">
+                Newest
+            </a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a href="/wedgrounds/feature/oldest" class="btn btn-primary btn-block wedground-btn" style="background-image: url('/img/older.png');">
+                Oldest
+            </a>
+        </div>
+    </div>
+</div>

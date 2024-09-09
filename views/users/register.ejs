@@ -1,0 +1,51 @@
+<% layout('layout/boilerplate')-%>
+    <main>
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <img src="/img/register2.png" alt="..." class="card-img-top">
+                        <div class="card-body mt-1">
+                            <form action="/register" method="POST" novalidate class="needs-validation"  enctype="multipart/form-data">
+                                <input class="form-control form-control-sm" type="file" id="image" name="image" multiple required>
+                                <div class="mb-3">
+                                    <label class="form-label" for="title">Username</label>
+                                    <input class="form-control" type="text" id="title" name="username" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please choose a username.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input class="form-control" type="email" id="email" name="email" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please choose an Email.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input class="form-control" type="password" id="location" name="password" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please choose a password.
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <button type="submit" class="btn btn-success btn-block">Register</button>
+                                    <p class="mb-0">Have an account? <a href="/login">Log-in</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
